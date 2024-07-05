@@ -63,7 +63,7 @@ fun ShoppingList() {
         ) {
             LazyColumn(modifier = Modifier.fillMaxSize()) {
                 items(sItems) {
-                    // Rename it to item
+                    // Rename "it" to "item"
                         item ->
                     if (item.isEditing) {
                         ShoppingItemEditor(item = item,
