@@ -67,7 +67,7 @@ fun ShoppingList() {
                         item ->
                     if (item.isEditing) {
                         ShoppingItemEditor(item = item,
-                            oneEditComplete = { editedName, editedQuantity ->
+                            onEditComplete = { editedName, editedQuantity ->
                                 sItems = sItems.map {
                                     it.copy(isEditing = false)
                                 }
@@ -164,7 +164,7 @@ fun ShoppingList() {
 }
 
 @Composable
-fun ShoppingItemEditor(item: ShoppingItem, oneEditComplete: (String, Int) -> Unit) {
+fun ShoppingItemEditor(item: ShoppingItem, onEditComplete: (String, Int) -> Unit) {
     var editedName by remember { mutableStateOf(item.name) }
     var editedQuantity by remember { mutableStateOf(item.quantity.toString()) }
 
@@ -194,7 +194,7 @@ fun ShoppingItemEditor(item: ShoppingItem, oneEditComplete: (String, Int) -> Uni
                     .padding(8.dp)
             )
         }
-        Button(onClick = { oneEditComplete(editedName, editedQuantity.toIntOrNull() ?: 1) }) {
+        Button(onClick = { onEditComplete(editedName, editedQuantity.toIntOrNull() ?: 1) }) {
             Text("Save")
         }
     }
