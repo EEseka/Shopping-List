@@ -50,6 +50,17 @@ android {
 }
 
 dependencies {
+    // Android map compose
+    implementation("com.google.maps.android:maps-compose:2.15.0")
+    // Location Services
+    implementation("com.google.android.gms:play-services-location:21.3.0")
+    // Compose viewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.3")
+    // Compose Navigation
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    // Retrofit and Gson
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -59,6 +70,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.play.services.maps)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
