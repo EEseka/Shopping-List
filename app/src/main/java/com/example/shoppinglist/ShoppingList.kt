@@ -187,23 +187,23 @@ fun ShoppingList(
                                 .fillMaxWidth()
                                 .padding(8.dp),
                             label = { Text("Quantity") })
-                    }
-                    Button(onClick = {
-                        if (locationUtils.hasLocationPermission()) {
-                            locationUtils.requestLocationUpdates(viewModel)
-                            navController.navigate("locationscreen") {
-                                this.launchSingleTop
-                            }
-                        } else {
-                            requestPermissionLauncher.launch(
-                                arrayOf(
-                                    Manifest.permission.ACCESS_FINE_LOCATION,
-                                    Manifest.permission.ACCESS_COARSE_LOCATION
+                        Button(onClick = {
+                            if (locationUtils.hasLocationPermission()) {
+                                locationUtils.requestLocationUpdates(viewModel)
+                                navController.navigate("locationscreen") {
+                                    this.launchSingleTop
+                                }
+                            } else {
+                                requestPermissionLauncher.launch(
+                                    arrayOf(
+                                        Manifest.permission.ACCESS_FINE_LOCATION,
+                                        Manifest.permission.ACCESS_COARSE_LOCATION
+                                    )
                                 )
-                            )
+                            }
+                        }) {
+                            Text("Add Address")
                         }
-                    }) {
-                        Text("address")
                     }
                 },
             )
